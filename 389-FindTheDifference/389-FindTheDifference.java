@@ -1,0 +1,20 @@
+// Last updated: 09/07/2026, 09:18:34
+class Solution {
+    public char findTheDifference(String s, String t) {
+        int count[]=new int[26];
+        char ch='a';
+        for(int i=0;i<s.length();i++)
+        {
+            count[s.charAt(i)-'a']++;
+        }
+        for(int i=0;i<t.length();i++)
+        {
+            count[t.charAt(i)-'a']--;
+            if(count[t.charAt(i)-'a']<0)
+            {
+                ch=t.charAt(i);
+            }
+        }
+        return ch;
+    }
+}
